@@ -55,6 +55,17 @@ html {
     }
 }
 
+@keyframes headerGrowth {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 /* Modal */
 .modal {
     position: fixed;
@@ -83,7 +94,7 @@ html {
 
 /* Button styte */
 .btn {
-    min-width: 146px;
+    min-width: 124px;
     height: 34px;
     text-decoration: none;
     border: none;
