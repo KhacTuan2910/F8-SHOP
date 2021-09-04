@@ -485,6 +485,7 @@
     color: transparent;
     display: block;
     line-height: 0;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .header__logo-img {
@@ -638,6 +639,7 @@
     display: inline-block;
     padding: 0 12px;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .header__cart-icon {
@@ -908,6 +910,16 @@
     color: var(--primary-color);
 }
 
+.header__sort-item--active.header__sort-item::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    transform: translateY(-50%);
+    height: 2px;
+    width: 100%;
+    background-color: var(--primary-color);
+}
+
 .header__sort-link {
     text-decoration: none;
     font-size: 1.4rem;
@@ -916,6 +928,7 @@
     height: 100%;
     line-height: var(--header-sort-bar-height);
     text-align: center;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .header__sort-item:not(:first-child)::before {
@@ -992,6 +1005,63 @@
     right: -4px;
     color: var(--primary-color);
 }
+
+/* Category mobile */
+.mobile-category {
+
+}
+
+.mobile-category__list {
+    display: flex;
+    padding-left: 0;
+    list-style-type: none;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.mobile-category__list::-webkit-scrollbar {
+    display: none;
+}
+
+.mobile-category__item {
+    border-radius: 4px;
+    flex-shrink: 0;
+    margin-right: 10px;
+}
+
+.mobile-category__item:nth-of-type(3n + 1) {
+    background-color: #87afd8;
+}
+
+.mobile-category__item:nth-of-type(3n + 2) {
+    background-color: #76c9bd;
+}
+
+.mobile-category__item:nth-of-type(3n) {
+    background-color: #88cf81;
+}
+
+.mobile-category__link {
+    --line-height: 2rem;
+    text-decoration: none;
+    color: var(--white-color);
+    font-size: 1.4rem;
+    font-weight: 300;
+    line-height: var(--line-height);
+    height: calc(var(--line-height) * 2);
+    text-align: center;
+    /* display: block; */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    width: 110px;
+    padding: 0 4px;
+    border-radius: 4px;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
 
 /* Home sort + filter */
 .home-filter {
@@ -1085,6 +1155,7 @@
     transition: transform ease-out .1s;
     will-change: transform;
     text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .home-product-item:hover {
